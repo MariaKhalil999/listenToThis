@@ -38,44 +38,39 @@ music_subs = [
     # Add more
 ]
 
-
-
 st.subheader("Search for subreddits to browse")
 
 # Store selected subreddits in session
 if "selected_subs" not in st.session_state:
     st.session_state.selected_subs = []
 
-# Suggestions come from list of music subs
-suggestions = music_subs  # full list by default
-
 # Display suggestions as tags with autocomplete
 st_tags(
     label='Select subreddits to browse',
     text='Type to search and press enter',
     value=st.session_state.selected_subs,
-    suggestions=suggestions,
+    suggestions=music_subs,
     maxtags=20,
     key="selected_subs"
 )
 
 
-colors = ["darkcyan", "mediumpurple", "tan", "orange", "crimson", "teal", "olive"]
+# colors = ["darkcyan", "mediumpurple", "tan", "orange", "crimson", "teal", "olive"]
 
-def display_colored_subs(subs: list[str], colors: list[str]):
-    if not subs:
-        st.write("Currently browsing: None")
-        return
+# def display_colored_subs(subs: list[str], colors: list[str]):
+#     if not subs:
+#         st.write("Currently browsing: None")
+#         return
 
-    pills = []
-    for i, sub in enumerate(subs):
-        color = colors[i % len(colors)]  # cycle through colors
-        pills.append(f'<span style="background-color:{color}; color:white; padding:4px 8px; border-radius:12px; margin-right:4px;">{sub}</span>')
+#     pills = []
+#     for i, sub in enumerate(subs):
+#         color = colors[i % len(colors)]  # cycle through colors
+#         pills.append(f'<span style="background-color:{color}; color:white; padding:4px 8px; border-radius:12px; margin-right:4px;">{sub}</span>')
 
-    st.markdown(f"**Currently browsing:** {' '.join(pills)}", unsafe_allow_html=True)
+#     st.markdown(f"**Currently browsing:** {' '.join(pills)}", unsafe_allow_html=True)
 
-# Usage
-display_colored_subs(st.session_state.selected_subs, colors)
+# # Usage
+# display_colored_subs(st.session_state.selected_subs, colors)
 
 
 def fetch_posts(subreddit_name, limit):
