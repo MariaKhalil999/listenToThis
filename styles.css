@@ -1,0 +1,23 @@
+/* Slider track */
+div.stSlider > div[data-baseweb="slider"] > div > div {
+    background: linear-gradient(
+        to right,
+        rgb(255, 255, 255) 0%,
+        rgb(255, 255, 255) {GRADIENT_PERCENT}%,
+        rgba(151, 166, 195, 0.25) {GRADIENT_PERCENT}%,
+        rgba(151, 166, 195, 0.25) 100%
+    );
+}
+
+/* Slider thumb (the draggable circle) */
+div.stSlider > div[data-baseweb="slider"] > div > div > div[role="slider"] {
+    background-color: white;
+    border: 2px solid rgb(34, 34, 34);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+}
+
+/* Slider value label (number above thumb) */
+div.stSlider > div[data-baseweb="slider"] > div > div > div > div {
+    color: white; /* change the number color */
+    font-weight: bold;
+}
