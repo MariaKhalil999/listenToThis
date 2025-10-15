@@ -1,0 +1,4 @@
+streamlit
+praw
+python-dotenv
+streamlit-tags
